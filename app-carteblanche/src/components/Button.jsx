@@ -1,5 +1,5 @@
 
-const CustomBtn = ({ children, style = {},  ...props }) => {
+const CustomBtn = ({ children, style = {} }) => {
 
   const defaultStyle = {
     backgroundColor: "yellow",
@@ -16,7 +16,7 @@ const CustomBtn = ({ children, style = {},  ...props }) => {
 
   const styleBtn = {...defaultStyle, ...style}
    return (
-    <button style={styleBtn}{...props}>
+    <button style={styleBtn}>
       {children}
     </button>
   );
