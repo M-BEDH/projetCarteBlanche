@@ -1,0 +1,15 @@
+.greenyellow {
+  color: #99ff00;
+}
+
+.blueBkg {
+  color: #1504b3;
+  background-color: #ffebcd;
+  border-radius: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sizeFont {
+  font-size: 30px;
+}
