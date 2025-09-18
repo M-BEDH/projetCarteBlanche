@@ -1,6 +1,5 @@
 import { Component } from "react";
 import Header from "./Header";
-import ImageSlider from "./ImageSlider";
 import ImageMap from "./ImageMap";
 import MyFooter from "./footer";
 import styles from "../Css/myCss.module.css";
@@ -62,6 +61,7 @@ class MyCarteBlanche extends Component {
 
         <ImageMap />
 
+
         <div>
           <Button onClick={this.handleChangeHeader}>
             Cliquer pour changer titre Header
@@ -69,6 +69,7 @@ class MyCarteBlanche extends Component {
 
           <h1 style={Title}>Choisissez une option : </h1>
         </div>
+
 
         <div>
           <Button
@@ -78,6 +79,8 @@ class MyCarteBlanche extends Component {
             Cliquer pour changer couleur de ce bouton
           </Button>
         </div>
+
+
 
         <div>
           <p className={`${myClass} sizeFont`}>Footer transformé</p>
@@ -94,12 +97,6 @@ class MyCarteBlanche extends Component {
           </p>
           
         </div>
-
-           {/* <div>
-            <br />
-            <ImageSlider />
-          </div> */}
-
       </div>
     );
   }
