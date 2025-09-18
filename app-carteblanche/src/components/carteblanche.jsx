@@ -24,8 +24,7 @@ const Button = styled.button`
 
 class MyCarteBlanche extends Component {
   state = {
-    titleColor: "purple",
-    headerColor: "#ec1a60",
+    headerColor:"#ec1a60",
     fontSizeHeader: "40px",
     btnColor: "#1fc909",
   };
@@ -59,7 +58,7 @@ class MyCarteBlanche extends Component {
 
     return (
       <div>
-        <Header color={this.state.headerColor} fontSizeHeader={this.state.fontSizeHeader} />
+        <Header color={this.state.headerColor} fontSize={this.state.fontSizeHeader} />
 
         <ImageMap />
 
