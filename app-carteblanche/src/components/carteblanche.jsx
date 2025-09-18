@@ -4,7 +4,6 @@ import MyFooter from "./footer";
 import styles from "./Css/myCss.module.css";
 import styled from "styled-components";
 import "./Css/style.css";
-import "./Css/style.css";
 
 const Title = {
   color: "red",
