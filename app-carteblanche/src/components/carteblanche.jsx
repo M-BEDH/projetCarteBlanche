@@ -1,7 +1,8 @@
 import { Component } from "react";
 import Header from "./Header";
 import ImageMap from "./ImageMap";
-import MyFooter from "./footer";
+import CustomBtn from "./Button";
+import MyFooter from "./Footer";
 import styles from "../Css/myCss.module.css";
 import styled from "styled-components";
 import "../Css/style.css";
@@ -23,26 +24,23 @@ const Button = styled.button`
 
 class MyCarteBlanche extends Component {
   state = {
-    headerColor:"#ec1a60",
+    headerColor: "#ec1a60",
     fontSizeHeader: "40px",
     btnColor: "#1fc909",
   };
 
-    handleChangeHeader = () => {
+  handleChangeHeader = () => {
     this.setState({
       headerColor: this.state.headerColor === "#ec1a60" ? "#2433ff" : "#ec1a60",
       fontSizeHeader: this.state.fontSizeHeader === "40px" ? "30px" : "40px",
     });
   };
 
-
-
   handleChangeColorBtn = () => {
     this.setState({
       btnColor: this.state.btnColor === "#4312f3" ? "#02df39" : "#4312f3",
     });
   };
-
 
   // La gestion du footer se fait dans App.jsx, donc utilisation de la props onToggleFooter
   // pour appeler la méthode handleChangeStateFooter de App.jsx
@@ -57,10 +55,12 @@ class MyCarteBlanche extends Component {
 
     return (
       <div>
-        <Header color={this.state.headerColor} fontSize={this.state.fontSizeHeader} />
+        <Header
+          color={this.state.headerColor}
+          fontSize={this.state.fontSizeHeader}
+        />
 
         <ImageMap />
-
 
         <div>
           <Button onClick={this.handleChangeHeader}>
@@ -70,7 +70,6 @@ class MyCarteBlanche extends Component {
           <h1 style={Title}>Choisissez une option : </h1>
         </div>
 
-
         <div>
           <Button
             btncolor={this.state.btnColor}
@@ -79,8 +78,6 @@ class MyCarteBlanche extends Component {
             Cliquer pour changer couleur de ce bouton
           </Button>
         </div>
-
-
 
         <div>
           <p className={`${myClass} sizeFont`}>Footer transformé</p>
@@ -92,10 +89,32 @@ class MyCarteBlanche extends Component {
             Changer l'état via App.jsx true/false
           </button>
 
-           <p className={styles.orange}>
+          <p className={styles.orange}>
             <MyFooter />
           </p>
-          
+        </div>
+
+        <div className="customBtn">
+          <CustomBtn text="Bouton de départ ">Bouton de départ</CustomBtn>
+
+          <CustomBtn
+            style={{
+              backgroundColor: "red",
+              borderRadius: "20px",
+              margin: "0 auto 5px",
+              color: "#fff",
+            }}
+          >
+            Bouton custom rouge
+          </CustomBtn>
+
+          <CustomBtn
+            text="bouton custom bleu"
+            style={{ backgroundColor: "blue", margin: "auto", color: "#fff" }}
+          >
+            Bouton custom bleu
+          </CustomBtn>
+
         </div>
       </div>
     );
