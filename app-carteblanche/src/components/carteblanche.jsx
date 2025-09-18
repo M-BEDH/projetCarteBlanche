@@ -45,7 +45,7 @@ class MyCarteBlanche extends Component {
 
 
   // La gestion du footer se fait dans App.jsx, donc utilisation de la props onToggleFooter
-  // pour appeler la méthode handleChangeFooter de App.jsx
+  // pour appeler la méthode handleChangeStateFooter de App.jsx
   handleChangeFooterColor = () => {
     if (this.props.kidsChangeFooter) {
       this.props.kidsChangeFooter();
