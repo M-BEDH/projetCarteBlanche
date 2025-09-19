@@ -14,7 +14,7 @@ const Title = {
 };
 
 const Button = styled.button`
-  background-color: ${(props) => props.btncolor || "#4312f3"};
+  background-color: ${(props) => props.btnColor || "#4312f3"};
   color: white;
   font-size: 20px;
   padding: 10px;
@@ -31,8 +31,8 @@ class MyCarteBlanche extends Component {
 
   handleChangeHeader = () => {
     this.setState({
-      headerColor: this.state.headerColor === "#ec1a60" ? "#2433ff" : "#ec1a60",
-      fontSizeHeader: this.state.fontSizeHeader === "40px" ? "30px" : "40px",
+      headerColor: this.state.headerColor === "#ec1a60" ? "#24ff87ff" : "#ec1a60",
+      // fontSizeHeader: this.state.fontSizeHeader === "40px" ? "30px" : "40px",
     });
   };
 
@@ -72,7 +72,7 @@ class MyCarteBlanche extends Component {
 
         <div>
           <Button
-            btncolor={this.state.btnColor}
+            btnColor={this.state.btnColor}
             onClick={this.handleChangeColorBtn}
           >
             Cliquer pour changer couleur de ce bouton
@@ -97,7 +97,7 @@ class MyCarteBlanche extends Component {
         <div className="customBtn">
           <CustomBtn text="Bouton de départ ">Bouton de départ</CustomBtn>
 
-          <CustomBtn
+          <CustomBtn onClick={this.handleChangeColorBtn}
             style={{
               backgroundColor: "red",
               borderRadius: "20px",
@@ -108,9 +108,9 @@ class MyCarteBlanche extends Component {
             Bouton custom rouge
           </CustomBtn>
 
-          <CustomBtn
+          <CustomBtn onClick={this.handleChangeColorBtn}
             text="bouton custom bleu"
-            style={{ backgroundColor: "blue", margin: "auto", color: "#fff" }}
+            style={{ backgroundColor: "#4312f3", margin: "auto", color: "#fff" }}
           >
             Bouton custom bleu
           </CustomBtn>
