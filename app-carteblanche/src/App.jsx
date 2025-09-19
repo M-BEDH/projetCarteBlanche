@@ -1,5 +1,5 @@
 import { Component } from "react";
-import MyCarteBlanche from "./components/Carteblanche";
+import MyCarteBlanche from "./components/CarteBlanche";
 
 class App extends Component {
   state = {

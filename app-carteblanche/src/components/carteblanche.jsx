@@ -22,12 +22,31 @@ const Button = styled.button`
   margin: 2rem auto;
 `;
 
+
+
+const btn1 = {
+  backgroundColor: "red",
+  borderRadius: "20px",
+  margin: "0 auto 5px",
+  color: "#fff",
+}
+
+
+const btn2 = {
+  backgroundColor: "#4312f3",
+  margin: "auto",
+  color: "#fff"
+}
+
+
 class MyCarteBlanche extends Component {
   state = {
     headerColor: "#ec1a60",
     fontSizeHeader: "40px",
     btnColor: "#1fc909",
+    btn2Color: "#4312f3",
   };
+
 
   handleChangeHeader = () => {
     this.setState({
@@ -36,11 +55,29 @@ class MyCarteBlanche extends Component {
     });
   };
 
+
   handleChangeColorBtn = () => {
     this.setState({
       btnColor: this.state.btnColor === "#4312f3" ? "#02df39" : "#4312f3",
     });
   };
+
+
+  handleSayHello = () => {
+    alert("Say Good-Bye")
+  };
+
+
+
+  changeCustomBtn = () => {
+    this.setState({
+      btn2Color: this.state.btn2Color === "#4312f3" ? "#248307ff" : "#4312f3"
+    });
+  };
+
+
+
+
 
   // La gestion du footer se fait dans App.jsx, donc utilisation de la props onToggleFooter
   // pour appeler la méthode handleChangeStateFooter de App.jsx
@@ -97,20 +134,13 @@ class MyCarteBlanche extends Component {
         <div className="customBtn">
           <CustomBtn text="Bouton de départ ">Bouton de départ</CustomBtn>
 
-          <CustomBtn onClick={this.handleChangeColorBtn}
-            style={{
-              backgroundColor: "red",
-              borderRadius: "20px",
-              margin: "0 auto 5px",
-              color: "#fff",
-            }}
-          >
+          <CustomBtn onClick={this.handleSayHello}
+            btnStyle={btn1}>
             Bouton custom rouge
           </CustomBtn>
 
-          <CustomBtn onClick={this.handleChangeColorBtn}
-            text="bouton custom bleu"
-            style={{ backgroundColor: "#4312f3", margin: "auto", color: "#fff" }}
+          <CustomBtn onClick={this.changeCustomBtn}
+            btnStyle={{ ...btn2,backgroundColor: this.state.btn2Color }}
           >
             Bouton custom bleu
           </CustomBtn>

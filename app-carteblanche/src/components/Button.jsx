@@ -1,5 +1,5 @@
 
-const CustomBtn = ({ children, style = {} }) => {
+const CustomBtn = ({ children, btnStyle, onClick }) => {
 
   const defaultStyle = {
     backgroundColor: "yellow",
@@ -13,10 +13,8 @@ const CustomBtn = ({ children, style = {} }) => {
     margin: "5px auto",
     width: "220px"
   };
-
-  const styleBtn = {...defaultStyle, ...style}
    return (
-    <button style={styleBtn}>
+    <button onClick={onClick} style={{...defaultStyle, ...btnStyle}} >
       {children}
     </button>
   );
